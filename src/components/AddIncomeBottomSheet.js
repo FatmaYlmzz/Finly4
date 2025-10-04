@@ -4,7 +4,7 @@ import Modal from "react-native-modal";
 import { Picker } from "@react-native-picker/picker";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import API from "../api/api";
-import AsyncStorage from "@react-native-async-storage/async-storage";  // ✅ DÜZELTİLDİ
+import AsyncStorage from "@react-native-async-storage/async-storage"; 
 
 const AddIncomeBottomSheet = ({ isVisible, onClose, onIncomeAdded }) => {
   const [title, setTitle] = useState("");
@@ -26,7 +26,7 @@ const AddIncomeBottomSheet = ({ isVisible, onClose, onIncomeAdded }) => {
     }
 
     try {
-      const token = await AsyncStorage.getItem("token");  // ✅ token buradan okunuyor
+      const token = await AsyncStorage.getItem("token");  
       if (!token) {
         Alert.alert("Hata", "Oturum bulunamadı!");
         return;
@@ -42,7 +42,7 @@ const AddIncomeBottomSheet = ({ isVisible, onClose, onIncomeAdded }) => {
           note,
         },
         {
-          headers: { Authorization: `Bearer ${token}` }, // ✅ token gönderiliyor
+          headers: { Authorization: `Bearer ${token}` }, 
         }
       );
 
